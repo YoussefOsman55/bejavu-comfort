@@ -6,62 +6,227 @@
 <title>Dejavu Comfort</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-}
-
 body{
+    margin:0;
+    font-family:Arial, sans-serif;
     background:#fff;
     color:#111;
 }
 
-/* Header */
+/* NAV */
 header{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:#fff;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 50px;
+    padding:15px 50px;
     border-bottom:1px solid #eee;
+    z-index:1000;
 }
 
 .logo{
-    font-size:24px;
+    font-size:22px;
     font-weight:bold;
     color:#bfa14a;
 }
 
 nav a{
-    margin:0 15px;
+    margin:0 12px;
     text-decoration:none;
     color:#111;
-    font-weight:500;
+    transition:0.3s;
 }
 
 nav a:hover{
     color:#bfa14a;
 }
 
-/* Hero */
+/* HERO */
 .hero{
-    height:90vh;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    background:linear-gradient(to bottom, #fff, #f9f9f9);
+    background:linear-gradient(#fff,#f8f8f8);
     padding:20px;
 }
 
 .hero h1{
-    font-size:50px;
-    color:#111;
+    font-size:55px;
+    animation:fadeIn 2s ease;
 }
 
 .hero span{
     color:#bfa14a;
+}
+
+.hero p{
+    color:#555;
+    font-size:18px;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#bfa14a;
+    color:#fff;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#a88c3f;
+}
+
+/* SECTIONS */
+section{
+    padding:80px 50px;
+    text-align:center;
+}
+
+h2{
+    color:#bfa14a;
+    margin-bottom:40px;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    border:1px solid #eee;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.4s;
+    background:#fff;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:10px;
+}
+
+/* ABOUT */
+.about{
+    background:#f9f9f9;
+    line-height:1.7;
+    color:#555;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:#fff;
+    padding:20px;
+    text-align:center;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:#fff;
+    padding:15px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Dejavu Comfort</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Luxury <span>Comfort</span> Shoes</h1>
+        <p>Sneakers • Sandals • Ballerina designed for ultimate comfort</p>
+        <a href="#products" class="btn">Explore Now</a>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+    <h2>Our Collection</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Sneakers">
+            <h3>Sneakers</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Sandals">
+            <h3>Sandals</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Ballerina">
+            <h3>Ballerina</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2>About Dejavu Comfort</h2>
+    <p>
+        Dejavu Comfort is a premium footwear brand focused on combining elegance with all-day comfort.
+        Every pair is designed with high-quality materials to give you softness, durability, and style in every step.
+        Our mission is to redefine comfort in fashion footwear.
+    </p>
+</section>
+
+<footer>
+    © 2026 Dejavu Comfort. All Rights Reserved.
+</footer>
+
+<!-- WhatsApp -->
+<a class="whatsapp" href="https://wa.me/201000000000" target="_blank">💬</a>
+
+</body>
+</html>    color:#bfa14a;
 }
 
 .hero p{
