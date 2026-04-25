@@ -1,434 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dejavu Comfort</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dejavu Comfort</title>
+    <style>
+        /* الألوان الأساسية: أبيض، ذهبي، أسود */
+        :root {
+            --bg-white: #ffffff;
+            --gold-accent: #D4AF37; /* لون ذهبي أنيق */
+            --text-black: #222222;
+            --light-gray: #f8f8f8;
+        }
 
-<style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#fff;
-    color:#111;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-black);
+            line-height: 1.6;
+        }
 
-/* NAV */
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    background:#fff;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 50px;
-    border-bottom:1px solid #eee;
-    z-index:1000;
-}
+        /* شريط التنقل (Header) */
+        header {
+            background-color: var(--bg-white);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--gold-accent);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
 
-.logo{
-    font-size:22px;
-    font-weight:bold;
-    color:#bfa14a;
-}
+        header h1 {
+            color: var(--gold-accent);
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
 
-nav a{
-    margin:0 12px;
-    text-decoration:none;
-    color:#111;
-    transition:0.3s;
-}
+        nav a {
+            text-decoration: none;
+            color: var(--text-black);
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
 
-nav a:hover{
-    color:#bfa14a;
-}
+        nav a:hover {
+            color: var(--gold-accent);
+        }
 
-/* HERO */
-.hero{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(#fff,#f8f8f8);
-    padding:20px;
-}
+        /* قسم الـ About */
+        .about-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--light-gray);
+            border-bottom: 1px solid #eee;
+        }
 
-.hero h1{
-    font-size:55px;
-    animation:fadeIn 2s ease;
-}
+        .about-section h2 {
+            color: var(--gold-accent);
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
 
-.hero span{
-    color:#bfa14a;
-}
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: var(--text-black);
+        }
 
-.hero p{
-    color:#555;
-    font-size:18px;
-}
+        /* قسم المنتجات (الكوليكشن) */
+        .collection-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* BUTTON */
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
-    background:#bfa14a;
-    color:#fff;
-    border-radius:30px;
-    text-decoration:none;
-    transition:0.3s;
-}
+        .collection-section h2 {
+            text-align: center;
+            color: var(--gold-accent);
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
 
-.btn:hover{
-    background:#a88c3f;
-}
+        .grid-container {
+            display: grid;
+            /* الجريد هيتجاوب مع الشاشات، هيعرض كروت بعرض 250 بيكسل على الأقل */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
 
-/* SECTIONS */
-section{
-    padding:80px 50px;
-    text-align:center;
-}
+        .product-card {
+            background-color: var(--bg-white);
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
 
-h2{
-    color:#bfa14a;
-    margin-bottom:40px;
-}
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(212, 175, 55, 0.2);
+            border-color: var(--gold-accent);
+        }
 
-/* PRODUCTS */
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
+        /* مكان صورة المنتج */
+        .product-img {
+            width: 100%;
+            height: 250px;
+            background-color: #fafafa;
+            border: 1px dashed var(--gold-accent);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
 
-.card{
-    border:1px solid #eee;
-    border-radius:15px;
-    overflow:hidden;
-    transition:0.4s;
-    background:#fff;
-}
+        /* لو حطيت صورة حقيقية، الكود ده هيخليها تظبط جوه المربع */
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.1);
-}
+        .product-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
 
-.card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
+        .product-category {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
 
-.card h3{
-    padding:10px;
-}
+        .buy-btn {
+            background-color: var(--bg-white);
+            color: var(--text-black);
+            border: 2px solid var(--gold-accent);
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+            width: 100%;
+        }
 
-/* ABOUT */
-.about{
-    background:#f9f9f9;
-    line-height:1.7;
-    color:#555;
-}
+        .buy-btn:hover {
+            background-color: var(--gold-accent);
+            color: var(--bg-white);
+        }
 
-/* FOOTER */
-footer{
-    background:#111;
-    color:#fff;
-    padding:20px;
-    text-align:center;
-}
+        /* الفوتر (Footer) */
+        footer {
+            background-color: var(--text-black);
+            color: var(--bg-white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        footer span {
+            color: var(--gold-accent);
+        }
 
-/* WHATSAPP BUTTON */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:#fff;
-    padding:15px 18px;
-    border-radius:50px;
-    text-decoration:none;
-    font-size:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* ANIMATION */
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-    <div class="logo">Dejavu Comfort</div>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-    </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-    <div>
-        <h1>Luxury <span>Comfort</span> Shoes</h1>
-        <p>Sneakers • Sandals • Ballerina designed for ultimate comfort</p>
-        <a href="#products" class="btn">Explore Now</a>
-    </div>
-</section>
-
-<!-- PRODUCTS -->
-<section id="products">
-    <h2>Our Collection</h2>
-
-    <div class="products">
-
-        <div class="card">
-            <img src="https://via.placeholder.com/400x300" alt="Sneakers">
-            <h3>Sneakers</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/400x300" alt="Sandals">
-            <h3>Sandals</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/400x300" alt="Ballerina">
-            <h3>Ballerina</h3>
-        </div>
-
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-    <h2>About Dejavu Comfort</h2>
-    <p>
-        Dejavu Comfort is a premium footwear brand focused on combining elegance with all-day comfort.
-        Every pair is designed with high-quality materials to give you softness, durability, and style in every step.
-        Our mission is to redefine comfort in fashion footwear.
-    </p>
-</section>
-
-<footer>
-    © 2026 Dejavu Comfort. All Rights Reserved.
-</footer>
-
-<!-- WhatsApp -->
-<a class="whatsapp" href="https://wa.me/201000000000" target="_blank">💬</a>
-
-</body>
-</html>    color:#bfa14a;
-}
-
-.hero p{
-    margin-top:15px;
-    font-size:18px;
-    color:#555;
-}
-
-/* Products */
-.section{
-    padding:60px 50px;
-    text-align:center;
-}
-
-.section h2{
-    font-size:30px;
-    margin-bottom:30px;
-    color:#bfa14a;
-}
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.card{
-    border:1px solid #eee;
-    padding:15px;
-    border-radius:10px;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
-}
-
-.card img{
-    width:100%;
-    border-radius:10px;
-}
-
-.card h3{
-    margin-top:10px;
-}
-
-/* About */
-.about{
-    background:#f9f9f9;
-    padding:60px 50px;
-    text-align:center;
-}
-
-.about p{
-    max-width:700px;
-    margin:auto;
-    color:#555;
-    line-height:1.6;
-}
-
-/* Footer */
-footer{
-    background:#111;
-    color:#fff;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-    <div class="logo">Dejavu Comfort</div>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <div>
-        <h1>Comfort Meets <span>Luxury</span></h1>
-        <p>Discover sneakers, sandals & ballerina designed for ultimate comfort</p>
-    </div>
-</section>
-
-<section class="section" id="products">
-    <h2>Our Products</h2>
-
-    <div class="products">
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="">
-            <h3>Sneakers</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="">
-            <h3>Sandals</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="">
-            <h3>Ballerina</h3>
-        </div>
-    </div>
-</section>
-
-<section class="about" id="about">
-    <h2 style="color:#bfa14a;">About Us</h2>
-    <p>
-        Dejavu Comfort is a modern footwear brand focused on delivering maximum comfort without compromising style.
-        Our shoes are designed with premium materials to give you all-day comfort and elegance in every step.
-    </p>
-</section>
-
-<footer>
-    © 2026 Dejavu Comfort. All Rights Reserved.
-</footer>
-
-</body>
-</html>        transform: scale(1.05);
-        border-color: gold;
-    }
-
-    .product img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 10px;
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-        border-top: 2px solid gold;
-    }
-</style>
-
+        /* استجابة الشاشات الصغيرة (الموبايل) */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>Dejavu <span>Comfort</span></h1>
-</header>
+    <header>
+        <h1>Dejavu Comfort</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Comfort</a>
+            <a href="#collection">Collection</a>
+        </nav>
+    </header>
 
-<div class="about">
-    <h2>About Us</h2>
-    <p>
-        Dejavu Comfort is a modern footwear brand focused on delivering extreme comfort with elegant design.
-        Our shoes are designed to give you the perfect balance between style and comfort for everyday wear.
-    </p>
-</div>
+    <section id="about" class="about-section">
+        <h2>Discover the True Meaning of Comfort</h2>
+        <p>
+            At <strong>Dejavu Comfort</strong>, we believe that elegance shouldn't come at the expense of your comfort. 
+            That's why we designed this new line with flexible, lightweight materials and a cushioned footbed that molds to your foot, giving you maximum comfort all day long. 
+            Whether you're at work, out with friends, or just taking a walk, our shoes will be your ultimate companion—so light, you'll barely feel them.
+        </p>
+    </section>
 
-<!-- Sneakers -->
-<div class="section">
-    <h2>Sneakers</h2>
-    <div class="products">
+    <section id="collection" class="collection-section">
+        <h2>New Collection (13 Products)</h2>
+        
+        <div class="grid-container">
+            
+            <div class="product-card">
+                <div class="product-img">
+                    <span style="color: #999;">Sneaker Image</span>
+                </div>
+                <div class="product-title">Comfort Cloud Sneaker</div>
+                <div class="product-category">Sneakers</div>
+                <button class="buy-btn">View Details</button>
+            </div>
 
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Sneaker 1</p></div>
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Sneaker 2</p></div>
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Sneaker 3</p></div>
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Sneaker 4</p></div>
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Sneaker 5</p></div>
+            <div class="product-card">
+                <div class="product-img">
+                    <span style="color: #999;">Sandal Image</span>
+                </div>
+                <div class="product-title">Breeze Summer Sandal</div>
+                <div class="product-category">Sandals</div>
+                <button class="buy-btn">View Details</button>
+            </div>
 
-    </div>
-</div>
+            <div class="product-card">
+                <div class="product-img">
+                    <span style="color: #999;">Ballerina Image</span>
+                </div>
+                <div class="product-title">Classic Soft Ballerina</div>
+                <div class="product-category">Ballerinas</div>
+                <button class="buy-btn">View Details</button>
+            </div>
 
-<!-- Sandals -->
-<div class="section">
-    <h2>Sandals</h2>
-    <div class="products">
+            <div class="product-card">
+                <div class="product-img">
+                    <span style="color: #999;">Product 4 Image</span>
+                </div>
+                <div class="product-title">Product Name</div>
+                <div class="product-category">Category</div>
+                <button class="buy-btn">View Details</button>
+            </div>
 
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Sandals 1</p></div>
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Sandals 2</p></div>
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Sandals 3</p></div>
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Sandals 4</p></div>
+             <div class="product-card">
+                <div class="product-img">
+                    <span style="color: #999;">Product 5 Image</span>
+                </div>
+                <div class="product-title">Product Name</div>
+                <div class="product-category">Category</div>
+                <button class="buy-btn">View Details</button>
+            </div>
 
-    </div>
-</div>
+            </div>
+    </section>
 
-<!-- Ballerina -->
-<div class="section">
-    <h2>Ballerina</h2>
-    <div class="products">
-
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Ballerina 1</p></div>
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Ballerina 2</p></div>
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Ballerina 3</p></div>
-        <div class="product"><img src="https://via.placeholder.com/300"><p>Ballerina 4</p></div>
-
-    </div>
-</div>
-
-<footer>
-    <p>© 2026 Dejavu Comfort - All Rights Reserved</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 <span>Dejavu Comfort</span>. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
