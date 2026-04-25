@@ -3,64 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bejavu Comfort</title>
+<title>Dejavu Comfort</title>
 
 <style>
-body {
-  font-family: Arial;
-  margin: 0;
-  background: #f5f5f5;
-  text-align: center;
-}
-.container {
-  padding: 20px;
-}
-h1 {
-  color: #111;
-}
-img {
-  width: 90%;
-  max-width: 400px;
-  border-radius: 10px;
-}
-.features {
-  text-align: left;
-  max-width: 400px;
-  margin: auto;
-}
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-  background: black;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-}
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #fff;
+        color: #111;
+    }
+
+    header {
+        background: #fff;
+        text-align: center;
+        padding: 30px;
+        border-bottom: 2px solid gold;
+    }
+
+    header h1 {
+        margin: 0;
+        color: black;
+        font-size: 40px;
+    }
+
+    header span {
+        color: gold;
+    }
+
+    .about {
+        padding: 40px;
+        text-align: center;
+    }
+
+    .about h2 {
+        color: gold;
+    }
+
+    .section {
+        padding: 20px 40px;
+    }
+
+    .section h2 {
+        border-left: 5px solid gold;
+        padding-left: 10px;
+    }
+
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .product {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .product:hover {
+        transform: scale(1.05);
+        border-color: gold;
+    }
+
+    .product img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        border-top: 2px solid gold;
+    }
 </style>
 
 </head>
-
 <body>
 
-<div class="container">
-  <h1>Bejavu Comfort</h1>
-  <p>All-day comfort without compromise</p>
+<header>
+    <h1>Dejavu <span>Comfort</span></h1>
+</header>
 
-  <img src="https://via.placeholder.com/400" alt="Bejavu Comfort Shoe">
-
-  <div class="features">
-    <h3>Features:</h3>
-    <ul>
-      <li>Designed for long-lasting comfort</li>
-      <li>Lightweight and flexible</li>
-      <li>Modern and stylish design</li>
-      <li>Perfect for everyday use</li>
-    </ul>
-  </div>
-
-  <a class="btn" href="#">Order Now</a>
+<div class="about">
+    <h2>About Us</h2>
+    <p>
+        Dejavu Comfort is a modern footwear brand focused on delivering extreme comfort with elegant design.
+        Our shoes are designed to give you the perfect balance between style and comfort for everyday wear.
+    </p>
 </div>
+
+<!-- Sneakers -->
+<div class="section">
+    <h2>Sneakers</h2>
+    <div class="products">
+
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Sneaker 1</p></div>
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Sneaker 2</p></div>
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Sneaker 3</p></div>
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Sneaker 4</p></div>
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Sneaker 5</p></div>
+
+    </div>
+</div>
+
+<!-- Sandals -->
+<div class="section">
+    <h2>Sandals</h2>
+    <div class="products">
+
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Sandals 1</p></div>
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Sandals 2</p></div>
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Sandals 3</p></div>
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Sandals 4</p></div>
+
+    </div>
+</div>
+
+<!-- Ballerina -->
+<div class="section">
+    <h2>Ballerina</h2>
+    <div class="products">
+
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Ballerina 1</p></div>
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Ballerina 2</p></div>
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Ballerina 3</p></div>
+        <div class="product"><img src="https://via.placeholder.com/300"><p>Ballerina 4</p></div>
+
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Dejavu Comfort - All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
