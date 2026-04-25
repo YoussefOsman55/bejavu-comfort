@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dejavu Comfort</title>
+    <title>Dejavu Comfort | Premium Footwear</title>
     <style>
-        /* الألوان الأساسية: أبيض، ذهبي، أسود */
+        /* الألوان الأساسية */
         :root {
             --bg-white: #ffffff;
-            --gold-accent: #D4AF37; /* لون ذهبي أنيق */
+            --gold-accent: #D4AF37;
             --text-black: #222222;
             --light-gray: #f8f8f8;
+            --transition: all 0.3s ease;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-white);
             color: var(--text-black);
             line-height: 1.6;
         }
 
-        /* شريط التنقل (Header) */
+        /* Navigation */
         header {
             background-color: var(--bg-white);
             padding: 20px 50px;
@@ -30,50 +31,53 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid var(--gold-accent);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         header h1 {
             color: var(--gold-accent);
             margin: 0;
             font-size: 28px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         nav a {
             text-decoration: none;
             color: var(--text-black);
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: var(--transition);
         }
 
         nav a:hover {
             color: var(--gold-accent);
         }
 
-        /* قسم الـ About */
+        /* About Section */
         .about-section {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             background-color: var(--light-gray);
-            border-bottom: 1px solid #eee;
         }
 
         .about-section h2 {
             color: var(--gold-accent);
-            font-size: 32px;
+            font-size: 36px;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
         .about-section p {
             max-width: 800px;
             margin: 0 auto;
-            font-size: 18px;
-            color: var(--text-black);
+            font-size: 19px;
+            color: #444;
         }
 
-        /* قسم المنتجات (الكوليكشن) */
+        /* Products Grid */
         .collection-section {
             padding: 60px 20px;
             max-width: 1200px;
@@ -84,101 +88,147 @@
             text-align: center;
             color: var(--gold-accent);
             font-size: 32px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .grid-container {
             display: grid;
-            /* الجريد هيتجاوب مع الشاشات، هيعرض كروت بعرض 250 بيكسل على الأقل */
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
 
         .product-card {
             background-color: var(--bg-white);
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            transition: var(--transition);
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(212, 175, 55, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
             border-color: var(--gold-accent);
         }
 
-        /* مكان صورة المنتج */
         .product-img {
             width: 100%;
             height: 250px;
             background-color: #fafafa;
-            border: 1px dashed var(--gold-accent);
-            border-radius: 5px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
-            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid #f0f0f0;
         }
 
-        /* لو حطيت صورة حقيقية، الكود ده هيخليها تظبط جوه المربع */
         .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         .product-title {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
-            margin: 10px 0 5px;
+            margin-bottom: 8px;
         }
 
         .product-category {
-            color: #777;
+            color: #888;
             font-size: 14px;
-            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
 
-        .buy-btn {
-            background-color: var(--bg-white);
+        .view-btn {
+            background-color: transparent;
             color: var(--text-black);
             border: 2px solid var(--gold-accent);
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 12px 25px;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+            transition: var(--transition);
             width: 100%;
         }
 
-        .buy-btn:hover {
+        .view-btn:hover {
             background-color: var(--gold-accent);
-            color: var(--bg-white);
+            color: white;
         }
 
-        /* الفوتر (Footer) */
-        footer {
-            background-color: var(--text-black);
-            color: var(--bg-white);
+        /* Modal Styles (النافذة المنبثقة) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        
-        footer span {
-            color: var(--gold-accent);
+            position: relative;
+            border-top: 5px solid var(--gold-accent);
+            animation: slideDown 0.4s ease;
         }
 
-        /* استجابة الشاشات الصغيرة (الموبايل) */
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .close-modal:hover { color: var(--text-black); }
+
+        #modalTitle { color: var(--gold-accent); margin-top: 0; }
+        
+        .price-tag {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: var(--text-black);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+        footer span { color: var(--gold-accent); }
+
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+            header { flex-direction: column; padding: 15px; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; }
+            .modal-content { width: 85%; margin: 30% auto; }
         }
     </style>
 </head>
@@ -187,77 +237,105 @@
     <header>
         <h1>Dejavu Comfort</h1>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About Comfort</a>
+            <a href="#">Home</a>
+            <a href="#about">About</a>
             <a href="#collection">Collection</a>
         </nav>
     </header>
 
     <section id="about" class="about-section">
-        <h2>Discover the True Meaning of Comfort</h2>
+        <h2>Unmatched Comfort</h2>
         <p>
-            At <strong>Dejavu Comfort</strong>, we believe that elegance shouldn't come at the expense of your comfort. 
-            That's why we designed this new line with flexible, lightweight materials and a cushioned footbed that molds to your foot, giving you maximum comfort all day long. 
-            Whether you're at work, out with friends, or just taking a walk, our shoes will be your ultimate companion—so light, you'll barely feel them.
+            Experience the fusion of luxury and ease. Our <strong>Dejavu Comfort</strong> line is engineered for those who move. 
+            Using cloud-soft insoles and breathable materials, we ensure every step feels like walking on air.
         </p>
     </section>
 
     <section id="collection" class="collection-section">
-        <h2>New Collection (13 Products)</h2>
-        
+        <h2>Our Collection (13 Items)</h2>
         <div class="grid-container">
-            
             <div class="product-card">
                 <div class="product-img">
-                    <span style="color: #999;">Sneaker Image</span>
+                    <span style="color: #ccc;">Sneaker Placeholder</span>
                 </div>
-                <div class="product-title">Comfort Cloud Sneaker</div>
+                <div class="product-title">Active Cloud Sneaker</div>
                 <div class="product-category">Sneakers</div>
-                <button class="buy-btn">View Details</button>
+                <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
                 <div class="product-img">
-                    <span style="color: #999;">Sandal Image</span>
+                    <span style="color: #ccc;">Sandal Placeholder</span>
                 </div>
-                <div class="product-title">Breeze Summer Sandal</div>
+                <div class="product-title">Golden Glow Sandal</div>
                 <div class="product-category">Sandals</div>
-                <button class="buy-btn">View Details</button>
+                <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
                 <div class="product-img">
-                    <span style="color: #999;">Ballerina Image</span>
+                    <span style="color: #ccc;">Ballerina Placeholder</span>
                 </div>
-                <div class="product-title">Classic Soft Ballerina</div>
+                <div class="product-title">Silk Touch Ballerina</div>
                 <div class="product-category">Ballerinas</div>
-                <button class="buy-btn">View Details</button>
+                <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img">
-                    <span style="color: #999;">Product 4 Image</span>
-                </div>
-                <div class="product-title">Product Name</div>
-                <div class="product-category">Category</div>
-                <button class="buy-btn">View Details</button>
+                <div class="product-img"><span style="color:#ccc">Product 4</span></div>
+                <div class="product-title">Comfort Item 4</div>
+                <div class="product-category">Sneakers</div>
+                <button class="view-btn">View Details</button>
             </div>
-
-             <div class="product-card">
-                <div class="product-img">
-                    <span style="color: #999;">Product 5 Image</span>
-                </div>
-                <div class="product-title">Product Name</div>
-                <div class="product-category">Category</div>
-                <button class="buy-btn">View Details</button>
-            </div>
-
+            
             </div>
     </section>
 
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle">Product Details</h2>
+            <p id="modalDescription">Crafted with premium materials for maximum durability and effortless style. Features an ergonomic sole designed for long-lasting comfort.</p>
+            <div class="price-tag">EGP 1,250</div>
+            <button class="view-btn" style="background-color: var(--gold-accent); color: white;">Add to Cart</button>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 <span>Dejavu Comfort</span>. All Rights Reserved.</p>
+        <p>&copy; 2026 <span>Dejavu Comfort</span> | Designed for Elegance</p>
     </footer>
 
+    <script>
+        // الكود اللي بيشغل الزراير والنافذة
+        const modal = document.getElementById("detailsModal");
+        const closeModal = document.querySelector(".close-modal");
+        const viewButtons = document.querySelectorAll(".view-btn");
+        const modalTitle = document.getElementById("modalTitle");
+
+        // لما تدوس على أي زرار View Details
+        viewButtons.forEach(button => {
+            // بنتأكد إن الزرار مش "Add to cart" اللي جوه المودال نفسه
+            if(!button.closest('.modal-content')) {
+                button.onclick = function() {
+                    const title = this.parentElement.querySelector(".product-title").innerText;
+                    modalTitle.innerText = title;
+                    modal.style.display = "block";
+                }
+            }
+        });
+
+        // قفل النافذة عند الضغط على X
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // قفل النافذة لو دوست في أي مكان بره المربع الأبيض
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
+
