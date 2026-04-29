@@ -15,394 +15,233 @@
 
         body {
             margin: 0; padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-white);
             color: var(--text-black);
             line-height: 1.6;
         }
 
+        /* الهيدر المتوسط الاحترافي */
         header {
             background-color: var(--bg-white);
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 25px 15px;
+            text-align: center;
             border-bottom: 2px solid var(--gold-accent);
-            position: sticky; top: 0; z-index: 100;
+            position: sticky;
+            top: 0; z-index: 100;
         }
 
-        header h1 { color: var(--gold-accent); margin: 0; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; }
-        nav a { text-decoration: none; color: var(--text-black); margin-left: 25px; font-weight: 600; transition: var(--transition); }
+        header h1 {
+            color: var(--gold-accent);
+            margin: 0 0 10px 0;
+            font-size: 32px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-black);
+            margin: 0 12px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
         nav a:hover { color: var(--gold-accent); }
 
-        /* --- About Section --- */
-        .about-section {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: var(--light-gray);
+        /* تنسيق الـ Badge */
+        .color-badge {
+            position: absolute;
+            top: 15px; right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #222;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            border: 1px solid var(--gold-accent);
+            z-index: 6;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .about-section h2 { color: var(--gold-accent); font-size: 36px; margin-bottom: 20px; text-transform: uppercase; }
-        .about-section p { max-width: 800px; margin: 0 auto; font-size: 19px; color: #444; }
+        .collection-section { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+        .collection-section h2 { text-align: center; color: var(--gold-accent); margin-bottom: 40px; }
 
-        /* --- Collection --- */
-        .collection-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-        .collection-section h2 { text-align: center; color: var(--gold-accent); font-size: 32px; margin-bottom: 50px; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
 
         .product-card {
-            background-color: var(--bg-white); border: 1px solid #eee;
-            border-radius: 12px; padding: 20px; text-align: center;
-            transition: var(--transition); position: relative;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
         }
 
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15); border-color: var(--gold-accent); }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1);
+            border-color: var(--gold-accent);
+        }
 
-        .product-img { position: relative; width: 100%; height: 250px; overflow: hidden; border-radius: 8px; background-color: #fafafa; margin-bottom: 20px; }
-        .image-slider { display: flex; transition: transform 0.4s ease-in-out; height: 100%; }
+        .product-img {
+            position: relative;
+            width: 100%; height: 240px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #fafafa;
+            margin-bottom: 15px;
+        }
+
+        .image-slider { display: flex; transition: transform 0.4s ease; height: 100%; }
         .image-slider img { min-width: 100%; height: 100%; object-fit: contain; }
-
-        .color-badge {
-            position: absolute; top: 15px; right: 15px; background: rgba(255, 255, 255, 0.9);
-            color: #222; padding: 4px 12px; border-radius: 20px; font-size: 13px;
-            font-weight: bold; border: 1px solid var(--gold-accent); z-index: 6; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
 
         .slider-btn {
             position: absolute; top: 50%; transform: translateY(-50%);
-            background: rgba(212, 175, 55, 0.6); color: white; border: none;
-            padding: 8px 10px; cursor: pointer; z-index: 5; border-radius: 50%; font-weight: bold;
+            background: rgba(212, 175, 55, 0.7);
+            color: white; border: none; padding: 6px 9px;
+            cursor: pointer; z-index: 5; border-radius: 50%; font-size: 12px;
         }
         .prev { left: 5px; } .next { right: 5px; }
 
-        .product-title { font-size: 22px; font-weight: bold; margin-bottom: 8px; }
-        .product-category { color: #888; font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
+        .product-title { font-size: 18px; font-weight: bold; margin: 10px 0 5px; }
+        .product-category { color: #888; font-size: 12px; text-transform: uppercase; margin-bottom: 15px; }
 
         .view-btn {
-            background-color: transparent; color: var(--text-black); border: 2px solid var(--gold-accent);
-            padding: 12px 25px; font-weight: bold; cursor: pointer; border-radius: 5px; width: 100%; transition: var(--transition);
+            background: transparent;
+            color: var(--text-black);
+            border: 2px solid var(--gold-accent);
+            padding: 10px; font-weight: bold;
+            cursor: pointer; border-radius: 6px;
+            width: 100%; transition: var(--transition);
         }
-        .view-btn:hover { background-color: var(--gold-accent); color: white; }
+        .view-btn:hover { background: var(--gold-accent); color: white; }
 
-        /* --- Modal --- */
+        /* المودال */
         .modal {
-            display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px); align-items: center; justify-content: center;
+            display: none; position: fixed;
+            z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
         }
-
         .modal-content {
-            background-color: white; padding: 40px; border-radius: 20px; width: 85%; max-width: 420px;
-            text-align: center; position: relative; border-top: 8px solid var(--gold-accent);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3); animation: slideDown 0.4s ease;
+            background: white; margin: 10% auto; padding: 30px;
+            border-radius: 15px; width: 85%; max-width: 400px;
+            text-align: center; position: relative; border-top: 5px solid var(--gold-accent);
         }
+        .close-modal { position: absolute; right: 15px; top: 10px; font-size: 24px; cursor: pointer; color: #999; }
+        .price-tag { font-size: 24px; font-weight: bold; color: #222; margin: 15px 0; }
 
-        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-        .close-modal { position: absolute; right: 20px; top: 15px; font-size: 30px; cursor: pointer; color: #999; }
-        .close-modal:hover { color: var(--text-black); }
-
-        #modalTitle { color: var(--gold-accent); margin-top: 0; font-size: 26px; }
-        .price-tag { font-size: 28px; font-weight: bold; margin: 20px 0; color: var(--text-black); }
-
-        footer { background-color: #111; color: white; text-align: center; padding: 30px; margin-top: 60px; }
+        footer { background: #111; color: white; text-align: center; padding: 25px; margin-top: 50px; }
+        footer span { color: var(--gold-accent); }
     </style>
 </head>
 <body>
 
     <header>
-        <h1> Dejavu </h1>
-        <nav><a href="#">Home</a><a href="#about">About</a><a href="#collection">Collection</a></nav>
+        <h1>Dejavu</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#collection">Collection</a>
+            <a href="#">Shop</a>
+        </nav>
     </header>
 
-    <section id="about" class="about-section">
-        <h2>Dejavu Comfort</h2>
-        <p>
-            Experience the fusion of luxury and ease. Our <strong>Dejavu Comfort</strong> line is engineered for those who move. 
-            Using cloud-soft insoles and breathable materials, we ensure every step feels like walking on air. <br/>
-            <strong>Step into Dejavu, Step into Comfort</strong>
-        </p>
-    </section>
-
     <section id="collection" class="collection-section">
-        <h2>Our Collection</h2>
-        <div class="grid-container">
-            
-            <!-- كارد 1 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Beige</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img1_a.webp" alt="Beige">
-                        <img src="img1_b.webp" alt="Black">
-                        <img src="img1_c.webp" alt="Nude">
-                    </div>
-                </div>
-                <div class="product-title">Active Cloud Sneaker</div>
-                <div class="product-category">Sneakers</div>
-                <button class="view-btn">View Details</button>
+        <h2>Our Premium Collection</h2>
+        <div class="grid-container" id="productGrid">
             </div>
-
-            <!-- كارد 2 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img2_a.webp" alt="Color 1">
-                        <img src="img2_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 2</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 3 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img3_a.webp" alt="Color 1">
-                        <img src="img3_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 3</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 4 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img4_a.webp" alt="Color 1">
-                        <img src="img4_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 4</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 5 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img5_a.webp" alt="Color 1">
-                        <img src="img5_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 5</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 6 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img6_a.webp" alt="Color 1">
-                        <img src="img6_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 6</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 7 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img7_a.webp" alt="Color 1">
-                        <img src="img7_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 7</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 8 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img8_a.webp" alt="Color 1">
-                        <img src="img8_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 8</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 9 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img9_a.webp" alt="Color 1">
-                        <img src="img9_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 9</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 10 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img10_a.webp" alt="Color 1">
-                        <img src="img10_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 10</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 11 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img11_a.webp" alt="Color 1">
-                        <img src="img11_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 11</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 12 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img12_a.webp" alt="Color 1">
-                        <img src="img12_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 12</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 13 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Color 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img13_a.webp" alt="Color 1">
-                        <img src="img13_b.webp" alt="Color 2">
-                    </div>
-                </div>
-                <div class="product-title">Product Name 13</div>
-                <div class="product-category">Category</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-            <!-- كارد 14 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <div class="color-badge">Option 1</div>
-                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
-                    <div class="image-slider">
-                        <img src="img14_a.webp" alt="Option 1">
-                        <img src="img14_b.webp" alt="Option 2">
-                        <img src="img14_c.webp" alt="Option 3">
-                    </div>
-                </div>
-                <div class="product-title">Premium Luxe Edition</div>
-                <div class="product-category">Special Edition</div>
-                <button class="view-btn">View Details</button>
-            </div>
-
-        </div>
     </section>
 
-    <!-- Modal -->
     <div id="detailsModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2 id="modalTitle">Product Details</h2>
-            <p id="modalDescription">Crafted with premium materials for maximum durability and effortless style. Features an ergonomic sole designed for long-lasting comfort.</p>
-            <div class="price-tag">EGP 1,250</div>
-            <button class="view-btn" style="background-color: var(--gold-accent); color: white;">Add to Cart</button>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <div id="modalPrice" class="price-tag"></div>
+            <button class="view-btn" style="background: var(--gold-accent); color: white;">Order Now</button>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Dejavu Comfort | Designed for Elegance</p>
+        <p>&copy; 2026 <span>Dejavu Comfort</span> | Step into Luxury</p>
     </footer>
 
     <script>
-        function changeImage(btn, direction) {
-            const slider = btn.parentElement.querySelector('.image-slider');
-            const badge = btn.parentElement.querySelector('.color-badge');
-            const images = slider.querySelectorAll('img');
-            let currentIndex = slider.getAttribute('data-index') ? parseInt(slider.getAttribute('data-index')) : 0;
-            currentIndex += direction;
-            if (currentIndex >= images.length) currentIndex = 0;
-            if (currentIndex < 0) currentIndex = images.length - 1;
-            slider.setAttribute('data-index', currentIndex);
-            slider.style.transform = `translateX(${-currentIndex * 100}%)`;
-            if (badge && images[currentIndex]) {
-                badge.innerText = images[currentIndex].getAttribute('alt');
-            }
-        }
+        // مصفوفة البيانات: عدل هنا فقط لكل منتج
+        const products = [
+            { id: 1, title: "Product 1", cat: "Sneakers", price: "1,250", desc: "وصف المنتج رقم 1 هنا...", colors: ["Beige", "Black"], imgs: ["img1_1.webp", "img1_2.webp"] },
+            { id: 2, title: "Product 2", cat: "Sandals", price: "950", desc: "وصف المنتج رقم 2 هنا...", colors: ["Tan", "White"], imgs: ["img2_1.webp", "img2_2.webp"] },
+            { id: 3, title: "Product 3", cat: "Sneakers", price: "1,100", desc: "وصف المنتج رقم 3 هنا...", colors: ["Blue", "Grey"], imgs: ["img3_1.webp", "img3_2.webp"] },
+            { id: 4, title: "Product 4", cat: "Classic", price: "1,400", desc: "وصف المنتج رقم 4 هنا...", colors: ["Black"], imgs: ["img4_1.webp"] },
+            { id: 5, title: "Product 5", cat: "Sneakers", price: "1,250", desc: "وصف المنتج رقم 5...", colors: ["White"], imgs: ["img5_1.webp"] },
+            { id: 6, title: "Product 6", cat: "Sandals", price: "800", desc: "وصف المنتج رقم 6...", colors: ["Gold"], imgs: ["img6_1.webp"] },
+            { id: 7, title: "Product 7", cat: "Sneakers", price: "1,300", desc: "وصف المنتج رقم 7...", colors: ["Red"], imgs: ["img7_1.webp"] },
+            { id: 8, title: "Product 8", cat: "Classic", price: "1,500", desc: "وصف المنتج رقم 8...", colors: ["Brown"], imgs: ["img8_1.webp"] },
+            { id: 9, title: "Product 9", cat: "Sneakers", price: "1,150", desc: "وصف المنتج رقم 9...", colors: ["Pink"], imgs: ["img9_1.webp"] },
+            { id: 10, title: "Product 10", cat: "Sandals", price: "900", desc: "وصف المنتج رقم 10...", colors: ["Silver"], imgs: ["img10_1.webp"] },
+            { id: 11, title: "Product 11", cat: "Sneakers", price: "1,200", desc: "وصف المنتج رقم 11...", colors: ["Green"], imgs: ["img11_1.webp"] },
+            { id: 12, title: "Product 12", cat: "Classic", price: "1,600", desc: "وصف المنتج رقم 12...", colors: ["Navy"], imgs: ["img12_1.webp"] },
+            { id: 13, title: "Product 13", cat: "Sneakers", price: "1,250", desc: "وصف المنتج رقم 13...", colors: ["Beige"], imgs: ["img13_1.webp"] },
+            { id: 14, title: "Product 14", cat: "Sandals", price: "850", desc: "وصف المنتج رقم 14...", colors: ["Multi"], imgs: ["img14_1.webp"] }
+        ];
 
-        const modal = document.getElementById("detailsModal");
-        const closeModalBtn = document.querySelector(".close-modal");
-
-        document.addEventListener('click', function (e) {
-            if (e.target && e.target.classList.contains('view-btn')) {
-                if (!e.target.closest('.modal-content')) {
-                    const card = e.target.closest('.product-card');
-                    const title = card.querySelector(".product-title").innerText;
-                    document.getElementById("modalTitle").innerText = title;
-                    modal.style.display = "flex";
-                }
-            }
+        // وظيفة بناء الكاردات تلقائياً
+        const grid = document.getElementById('productGrid');
+        products.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="product-img">
+                    <div class="color-badge">${p.colors[0]}</div>
+                    ${p.imgs.length > 1 ? `
+                        <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                        <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    ` : ''}
+                    <div class="image-slider">
+                        ${p.imgs.map((img, i) => `<img src="${img}" alt="${p.colors[i] || p.colors[0]}">`).join('')}
+                    </div>
+                </div>
+                <div class="product-title">${p.title}</div>
+                <div class="product-category">${p.cat}</div>
+                <div class="product-price" style="display:none;">EGP ${p.price}</div>
+                <p class="product-description" style="display:none;">${p.desc}</p>
+                <button class="view-btn">View Details</button>
+            `;
+            grid.appendChild(card);
         });
 
-        closeModalBtn.onclick = () => modal.style.display = "none";
-        window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; }
+        // سكريبت التقليب
+        function changeImage(btn, dir) {
+            const slider = btn.parentElement.querySelector('.image-slider');
+            const badge = btn.parentElement.querySelector('.color-badge');
+            const imgs = slider.querySelectorAll('img');
+            let idx = parseInt(slider.getAttribute('data-idx') || 0);
+            idx = (idx + dir + imgs.length) % imgs.length;
+            slider.setAttribute('data-idx', idx);
+            slider.style.transform = `translateX(${-idx * 100}%)`;
+            if(badge) badge.innerText = imgs[idx].getAttribute('alt');
+        }
+
+        // سكريبت المودال
+        const modal = document.getElementById("detailsModal");
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('view-btn') && !e.target.closest('.modal-content')) {
+                const card = e.target.closest('.product-card');
+                document.getElementById("modalTitle").innerText = card.querySelector(".product-title").innerText;
+                document.getElementById("modalDescription").innerText = card.querySelector(".product-description").innerText;
+                document.getElementById("modalPrice").innerText = card.querySelector(".product-price").innerText;
+                modal.style.display = "block";
+            }
+        });
+        document.querySelector(".close-modal").onclick = () => modal.style.display = "none";
+        window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
     </script>
 </body>
 </html>
