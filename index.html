@@ -21,27 +21,40 @@
             line-height: 1.6;
         }
 
-        /* --- Header & Navigation --- */
-        header {
-            background-color: var(--bg-white);
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--gold-accent);
-            position: sticky; top: 0; z-index: 100;
-        }
+       /* التعديل الجديد لتوسط اللوجو */
+header {
+    background-color: var(--bg-white);
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column; /* يخلي اللوجو فوق والمنيو تحت */
+    align-items: center;    /* يوسط كل حاجة في النص */
+    gap: 15px;             /* مسافة بين الكلمة والمنيو */
+    border-bottom: 2px solid var(--gold-accent);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        header h1 { color: var(--gold-accent); margin: 0; font-size: 24px; letter-spacing: 2px; text-transform: uppercase; }
+header h1 {
+    color: var(--gold-accent);
+    margin: 0;
+    font-size: 35px;        /* كبرنا الخط شوية عشان يبقى أوضح في النص */
+    letter-spacing: 5px;    /* زودنا المسافات بين الحروف لشكل أشيك */
+    text-transform: uppercase;
+    text-align: center;
+}
 
-        /* --- Products Grid --- */
-        .collection-section { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
+nav {
+    margin: 0;             /* شيلنا الـ margin عشان نضمن التوسط */
+}
 
-        .product-card {
-            background: var(--bg-white); border: 1px solid #eee;
-            border-radius: 12px; padding: 15px; text-align: center;
-            transition: var(--transition); position: relative;
+nav a {
+    text-decoration: none;
+    color: var(--text-black);
+    margin: 0 15px;        /* توزيع متساوي للمنيو */
+    font-weight: 600;
+    transition: var(--transition);
+}
         }
 
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--gold-accent); }
