@@ -204,69 +204,35 @@
 
     <script>
         // مصفوفة الـ 14 كارد - عدل هنا المسارات والوصف والأسعار
-        const products = [
-            { id: 1, title: "Flatform Slipper", cat: "CHE-DJTX-001", price: "1,599", desc: "وصف المنتج 1: مريح جداً للمشي.", colors: ["ROS-GLD", "Black"], imgs: ["che-djtx-001-ros-gld-1.webp", "che-djtx-001-black-2.webp"] },
-            
-            { id: 2, title: "Flat Slipper", cat: "CHE-DJTX-002", price: "1399", desc: ` Upper: Premium textured leatherette with a bold metallic buckle for a secure, elegant, and modern slip-on fit. 
-            Innersole: Ergonomically contoured and padded footbed for superior pressure relief and lasting underfoot comfort. 
-            Outer Sole: Lightweight PU flatform providing effortless shock absorption, durable wear, and steady traction. `
-             , colors: ["Black", "COOPER"], imgs: ["che-djtx-002-black-1.webp", "che-djtx-002-cooper-2.webp"] },
+      const products = [
+    { id: 1, title: "Flatform Slipper", cat: "CHE-DJTX-001", price: "1,599", desc: "وصف المنتج 1: مريح جداً للمشي.", colors: ["ROS-GLD", "Black"], imgs: ["che-djtx-001-ros-gld-1.webp", "che-djtx-001-black-2.webp"] },
 
-            { id: 3, title: "Roper Sandal", cat: "CHE-DJTX-003", price: "1599", desc: `Upper: Sophisticated metallic-finish leatherette featuring an adjustable ankle buckle and a bold decorative ornament for a premium, secure, and stylish look.
-            Innersole: Ergonomically cushioned footbed lined with soft, skin-friendly material to ensure a fatigue-free walking experience throughout the day.
-            Outer Sole: Engineered with a stable Polyurethane (PU) block heel, offering the perfect blend of height, durability, and lightweight impact protection.`,
-             colors: ["COOPER","Black"], imgs: ["che-djtx-003-cooper-1.webp","che-djtx-003-black-2.webp"] },
+    { id: 2, title: "Flat Slipper", cat: "CHE-DJTX-002", price: "1,399", desc: "Upper: Premium textured leatherette with a bold metallic buckle for a secure, elegant, and modern slip-on fit. Innersole: Ergonomically contoured and padded footbed for superior pressure relief and lasting underfoot comfort. Outer Sole: Lightweight PU flatform providing effortless shock absorption, durable wear, and steady traction.", colors: ["Black", "COOPER"], imgs: ["che-djtx-002-black-1.webp", "che-djtx-002-cooper-2.webp"] },
 
-            { id: 4, title: "Flat Sandal", cat: "CHE-DJTX-004", price: " 1699", desc: `Upper: Laser-cut leatherette with a secure slingback strap for a breathable, artistic, and stable fit.
-            Innersole: Anatomically contoured padded footbed for superior arch support and all-day cushioning.
-            Outer Sole: Lightweight Polyurethane (PU) flatform with a serrated grip for effortless height and traction`
-             , colors: ["ROS-GLD", "BEIGE"], imgs: ["che-djtx-004-ros-gld-2.webp", "che-djtx-004-beige-1.webp"] },
-            
-            { id: 5, title: "Roper Slipper", cat: "CHE-DJTX-005", price: " 1399", desc: `Upper: Textured intertwined leatherette straps with a wide-cut design for a secure, stylish fit and a modern summer look.
-            Innersole: Smooth, anatomically shaped footbed with soft padding to support the arch and ensure lasting comfort.
-            Outer Sole: Durable Polyurethane (PU) low block heel that provides stable elevation and lightweight shock absorption`, colors: ["MULTI", "BEIGE"], imgs: ["che-djtx-005-multi-2.webp", "che-djtx-005-beige-1.webp"] },
-            
-            { id: 6, title: "Block Slipper", cat: "CHE-DJTX-006 ", price: "1599", desc: `Upper: Grained leatherette with a stylish chain link for a secure, chic, and stable fit.
-            Innersole: Anatomically shaped padded footbed for superior arch support and all-day comfort.
-            Outer Sole: Lightweight PU block heel for steady elevation and durable shock absorption.`, colors: ["Black","ROS-GLD"], imgs: ["che-djtx-006-black-1.webp","che-djtx-006-ros-gld-2.webp"] },
-            
-            
-            
-            { id: 7, title: "Flat Oxford", cat: "CHE-DJTX-008", price: "1949", desc: `Upper: Perforated leatherette with laces for maximum breathability and a secure, adjustable fit.
-            Innersole: High-rebound padded footbed for superior pressure relief and all-day comfort.
-            Outer Sole: Lightweight PU flatform for effortless shock absorption and steady traction.`, colors: ["BEIGE", "GOLD"], imgs: ["che-djtx-008-beige-2.webp", "che-djtx-008-gold-1.webp"] },
-            
-            { id: 8, title: "Flat Espadrille", cat: "CHE-DJTX-009", price: "1599", desc: `Upper: Breathable knit mesh with multi-strap elastic bands for a secure, flexible, and adaptive fit.
-            Innersole: Soft padded footbed for superior arch support and all-day rebounding comfort.
-            Outer Sole: Ultra-lightweight PU sole for maximum shock absorption and effortless flexibility`, colors: ["Blue","BEIGE"], imgs: ["che-djtx-009-blue-2.webp","che-djtx-009-beige-1.webp"] },
-            
-            { id: 9, title: "Wedge Ballerina", cat: "CHE-DJTX-011", price: "1349", desc: `Upper: Textured leatherette with an elegant buckle and soft edges for a stylish, blister-free fit.
-            Innersole: Perforated, padded footbed for maximum breathability and all-day cushioning.
-            Outer Sole: Lightweight PU wedge for comfortable height, stability, and shock absorption.`,
-             colors: ["BEIGE", "Black", "NUDE"], imgs: ["che-djtx-011-beige-1.webp","che-djtx-011-black-1.webp","che-djtx-011-nude-1.webp" },
-            
-            { id: 10, title: "Flatform Sneakers", cat: "CHE-DJTX-012", price: "1799", desc:`Upper: Perforated leatherette with laces for maximum breathability and a secure, adjustable fit.
-            Innersole: High-rebound padded footbed for superior pressure relief and all-day comfort.
-            Outer Sole: Lightweight PU flatform for effortless shock absorption and steady traction.`, colors: ["WHITE","NUDE"], imgs: ["che-djtx-012-white-2.webp","che-djtx-012-nude-1.webp"] },
-            
-            { id: 11, title: " Flatform Sneakers", cat: "CHE-DJTX-013 ", price: "1599", desc: `Upper: Breathable knit mesh with supportive overlays and adjustable laces for a flexible, sock-like fit and maximum ventilation.
-            Innersole: Soft-lined interior with a high-rebound cushioned footbed for exceptional impact protection and all-day comfort.
-            Outer Sole: Lightweight Polyurethane (PU) flatform sole providing effortless elevation, flexibility, and steady traction`, 
-             colors: ["Navy", "BEIGE"], imgs: ["che-djtx-013-navy-2.webp","che-djtx-013-beige-1.webp"] },
-            
-            { id: 12, title: "Flat Loafer", cat: "CHE-DJTX-014", price: "1599", desc: `Upper: Classic grained leatherette with a penny loafer strap and reinforced stitching for a timeless, durable look.
-            Innersole: Smooth comfort-lined interior with a soft cushioned footbed that adapts to your foot for all-day ease.
-            Outer Sole: Thick Polyurethane (PU) "track" sole offering extra height, lightweight flexibility, and maximum grip.`, 
-             colors: ["Camel", "GOLD", "BEIGE"], imgs: ["che-djtx-014-camel-2.webp", "che-djtx-014-gold-2.webp", "che-djtx-014-beige-2.webp"] },
-            
-            { id: 13, title: "Flat Slip On", cat: "CHE-DJTX-015", price: "1700", desc: `Upper: Flexible grained leatherette with elastic sides and elegant studs for a stylish, easy-on fit.
-            Innersole: Soft breathable lining with a cushioned footbed for continuous pressure relief and comfort.
-            Outer Sole: Lightweight Polyurethane (PU) for maximum shock absorption and effortless, durable movement.`, colors: ["ROS-GLD", "Black"], imgs: ["che-djtx-015-ros-gld-2.webp","che-djtx-015-black-1.webp"] },
-            
-            { id: 14, title: "Raffia-Textured Comfort", cat: "HOG-DJTX-006", price: "1299", desc: `​Upper: Breathable woven raffia with a decorative buckle for a stylish, rustic summer fit.
-​            Innersole: Ergonomic "Comfort" padded footbed for targeted arch support and pressure relief.
-​            Outer Sole: Lightweight PU with a serrated grip for flexible cushioning and steady traction.`, colors: ["BEIGE"], imgs: ["hog-djtx-006-beige-2.webp","hog-djtx-006-beige-1.webp"] }
-        ];
+    { id: 3, title: "Roper Sandal", cat: "CHE-DJTX-003", price: "1,599", desc: "Upper: Sophisticated metallic-finish leatherette featuring an adjustable ankle buckle and a bold decorative ornament for a premium, secure, and stylish look. Innersole: Ergonomically cushioned footbed lined with soft, skin-friendly material to ensure a fatigue-free walking experience throughout the day. Outer Sole: Engineered with a stable Polyurethane (PU) block heel, offering the perfect blend of height, durability, and lightweight impact protection.", colors: ["COOPER", "Black"], imgs: ["che-djtx-003-cooper-1.webp", "che-djtx-003-black-2.webp"] },
+
+    { id: 4, title: "Flat Sandal", cat: "CHE-DJTX-004", price: "1,699", desc: "Upper: Laser-cut leatherette with a secure slingback strap for a breathable, artistic, and stable fit. Innersole: Anatomically contoured padded footbed for superior arch support and all-day cushioning. Outer Sole: Lightweight Polyurethane (PU) flatform with a serrated grip for effortless height and traction", colors: ["ROS-GLD", "BEIGE"], imgs: ["che-djtx-004-ros-gld-2.webp", "che-djtx-004-beige-1.webp"] },
+
+    { id: 5, title: "Roper Slipper", cat: "CHE-DJTX-005", price: "1,399", desc: "Upper: Textured intertwined leatherette straps with a wide-cut design for a secure, stylish fit and a modern summer look. Innersole: Smooth, anatomically shaped footbed with soft padding to support the arch and ensure lasting comfort. Outer Sole: Durable Polyurethane (PU) low block heel that provides stable elevation and lightweight shock absorption", colors: ["MULTI", "BEIGE"], imgs: ["che-djtx-005-multi-2.webp", "che-djtx-005-beige-1.webp"] },
+
+    { id: 6, title: "Block Slipper", cat: "CHE-DJTX-006 ", price: "1,599", desc: "Upper: Grained leatherette with a stylish chain link for a secure, chic, and stable fit. Innersole: Anatomically shaped padded footbed for superior arch support and all-day comfort. Outer Sole: Lightweight PU block heel for steady elevation and durable shock absorption.", colors: ["Black", "ROS-GLD"], imgs: ["che-djtx-006-black-1.webp", "che-djtx-006-ros-gld-2.webp"] },
+
+    { id: 7, title: "Flat Oxford", cat: "CHE-DJTX-008", price: "1,949", desc: "Upper: Perforated leatherette with laces for maximum breathability and a secure, adjustable fit. Innersole: High-rebound padded footbed for superior pressure relief and all-day comfort. Outer Sole: Lightweight PU flatform for effortless shock absorption and steady traction.", colors: ["BEIGE", "GOLD"], imgs: ["che-djtx-008-beige-2.webp", "che-djtx-008-gold-1.webp"] },
+
+    { id: 8, title: "Flat Espadrille", cat: "CHE-DJTX-009", price: "1,599", desc: "Upper: Breathable knit mesh with multi-strap elastic bands for a secure, flexible, and adaptive fit. Innersole: Soft padded footbed for superior arch support and all-day rebounding comfort. Outer Sole: Ultra-lightweight PU sole for maximum shock absorption and effortless flexibility", colors: ["Blue", "BEIGE"], imgs: ["che-djtx-009-blue-2.webp", "che-djtx-009-beige-1.webp"] },
+
+    { id: 9, title: "Wedge Ballerina", cat: "CHE-DJTX-011", price: "1,349", desc: "Upper: Textured leatherette with an elegant buckle and soft edges for a stylish, blister-free fit. Innersole: Perforated, padded footbed for maximum breathability and all-day cushioning. Outer Sole: Lightweight PU wedge for comfortable height, stability, and shock absorption.", colors: ["BEIGE", "Black", "NUDE"], imgs: ["che-djtx-011-beige-1.webp", "che-djtx-011-black-1.webp", "che-djtx-011-nude-1.webp"] },
+
+    { id: 10, title: "Flatform Sneakers", cat: "CHE-DJTX-012", price: "1,799", desc: "Upper: Perforated leatherette with laces for maximum breathability and a secure, adjustable fit. Innersole: High-rebound padded footbed for superior pressure relief and all-day comfort. Outer Sole: Lightweight PU flatform for effortless shock absorption and steady traction.", colors: ["WHITE", "NUDE"], imgs: ["che-djtx-012-white-2.webp", "che-djtx-012-nude-1.webp"] },
+
+    { id: 11, title: "Flatform Sneakers", cat: "CHE-DJTX-013 ", price: "1,599", desc: "Upper: Breathable knit mesh with supportive overlays and adjustable laces for a flexible, sock-like fit and maximum ventilation. Innersole: Soft-lined interior with a high-rebound cushioned footbed for exceptional impact protection and all-day comfort. Outer Sole: Lightweight Polyurethane (PU) flatform sole providing effortless elevation, flexibility, and steady traction", colors: ["Navy", "BEIGE"], imgs: ["che-djtx-013-navy-2.webp", "che-djtx-013-beige-1.webp"] },
+
+    { id: 12, title: "Flat Loafer", cat: "CHE-DJTX-014", price: "1,599", desc: "Upper: Classic grained leatherette with a penny loafer strap and reinforced stitching for a timeless, durable look. Innersole: Smooth comfort-lined interior with a soft cushioned footbed that adapts to your foot for all-day ease. Outer Sole: Thick Polyurethane (PU) track sole offering extra height, lightweight flexibility, and maximum grip.", colors: ["Camel", "GOLD", "BEIGE"], imgs: ["che-djtx-014-camel-2.webp", "che-djtx-014-gold-2.webp", "che-djtx-014-beige-2.webp"] },
+
+    { id: 13, title: "Flat Slip On", cat: "CHE-DJTX-015", price: "1,700", desc: "Upper: Flexible grained leatherette with elastic sides and elegant studs for a stylish, easy-on fit. Innersole: Soft breathable lining with a cushioned footbed for continuous pressure relief and comfort. Outer Sole: Lightweight Polyurethane (PU) for maximum shock absorption and effortless, durable movement.", colors: ["ROS-GLD", "Black"], imgs: ["che-djtx-015-ros-gld-2.webp", "che-djtx-015-black-1.webp"] },
+
+    { id: 14, title: "Raffia-Textured Comfort", cat: "HOG-DJTX-006", price: "1,299", desc: "Upper: Breathable woven raffia with a decorative buckle for a stylish, rustic summer fit. Innersole: Ergonomic Comfort padded footbed for targeted arch support and pressure relief. Outer Sole: Lightweight PU with a serrated grip for flexible cushioning and steady traction.", colors: ["BEIGE"], imgs: ["hog-djtx-006-beige-2.webp", "hog-djtx-006-beige-1.webp"] }
+];
 
         // بناء الكاردات تلقائياً
         const grid = document.getElementById('productGrid');
