@@ -112,23 +112,47 @@
             border-color: var(--gold-accent);
         }
 
+        /* تنسيق منطقة الصور */
         .product-img {
+            position: relative;
             width: 100%;
             height: 250px;
-            background-color: #fafafa;
+            overflow: hidden;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: #fafafa;
             margin-bottom: 20px;
-            border: 1px solid #f0f0f0;
         }
 
-        .product-img img {
-            max-width: 100%;
-            max-height: 100%;
+        .image-slider {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+            height: 100%;
+        }
+
+        .image-slider img {
+            min-width: 100%;
+            height: 100%;
             object-fit: contain;
         }
+
+        /* شكل الأسهم */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(212, 175, 55, 0.6);
+            color: white;
+            border: none;
+            padding: 8px 10px;
+            cursor: pointer;
+            z-index: 5;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .prev { left: 5px; }
+        .next { right: 5px; }
+        .slider-btn:hover { background: #D4AF37; }
 
         .product-title {
             font-size: 22px;
@@ -161,7 +185,7 @@
             color: white;
         }
 
-        /* Modal Styles (النافذة المنبثقة) */
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -212,7 +236,6 @@
             color: var(--text-black);
         }
 
-        /* Footer */
         footer {
             background-color: #111;
             color: white;
@@ -223,53 +246,12 @@
 
         footer span { color: var(--gold-accent); }
 
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
             header { flex-direction: column; padding: 15px; }
             nav { margin-top: 15px; }
             nav a { margin: 0 10px; }
             .modal-content { width: 85%; margin: 30% auto; }
         }
-        /* تنسيق منطقة الصور */
-.product-img {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden; /* عشان الصور الباقية تختفي وتظهر بالتقليب */
-}
-
-/* الحاوية اللي شايلة الصور */
-.image-slider {
-    display: flex;
-    transition: transform 0.4s ease-in-out; /* حركة التقليب ناعمة */
-    height: 100%;
-}
-
-.image-slider img {
-    min-width: 100%;
-    height: 100%;
-    object-fit: contain; /* عشان الصورة تظهر كاملة */
-}
-
-/* شكل الأسهم */
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(212, 175, 55, 0.6); /* دهبي شفاف */
-    color: white;
-    border: none;
-    padding: 8px 10px;
-    cursor: pointer;
-    z-index: 5;
-    border-radius: 50%;
-    font-weight: bold;
-}
-
-.prev { left: 5px; }
-.next { right: 5px; }
-
-.slider-btn:hover { background: #D4AF37; }
     </style>
 </head>
 <body>
@@ -288,113 +270,214 @@
         <p>
             Experience the fusion of luxury and ease. Our <strong>Dejavu Comfort</strong> line is engineered for those who move. 
             Using cloud-soft insoles and breathable materials, we ensure every step feels like walking on air. <br/>
-          <strong>  Step into Dejavu, Step into Comfort </strong>
+            <strong>Step into Dejavu, Step into Comfort</strong>
         </p>
-  </section>
+    </section>
 
     <section id="collection" class="collection-section">
         <h2>Our Collection</h2>
         <div class="grid-container">
             
             <div class="product-card">
-                <div class="product-img"><span style="color: #ccc;">Sneaker Placeholder</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh1_1.jpg" alt="Active Cloud 1">
+                        <img src="sh1_2.jpg" alt="Active Cloud 2">
+                        <img src="sh1_3.jpg" alt="Active Cloud 3">
+                    </div>
+                </div>
                 <div class="product-title">Active Cloud Sneaker</div>
                 <div class="product-category">Sneakers</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color: #ccc;">Sandal Placeholder</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh2_1.jpg" alt="Golden Glow 1">
+                        <img src="sh2_2.jpg" alt="Golden Glow 2">
+                    </div>
+                </div>
                 <div class="product-title">Golden Glow Sandal</div>
                 <div class="product-category">Sandals</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color: #ccc;">Ballerina Placeholder</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh3_1.jpg" alt="Silk Touch 1">
+                        <img src="sh3_2.jpg" alt="Silk Touch 2">
+                    </div>
+                </div>
                 <div class="product-title">Silk Touch Ballerina</div>
                 <div class="product-category">Ballerinas</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 4 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh4_1.jpg" alt="Comfort 4_1">
+                        <img src="sh4_2.jpg" alt="Comfort 4_2">
+                    </div>
+                </div>
                 <div class="product-title">Comfort Item 4</div>
                 <div class="product-category">Sneakers</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 5 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh5_1.jpg" alt="Soft Walk 1">
+                        <img src="sh5_2.jpg" alt="Soft Walk 2">
+                        <img src="sh5_3.jpg" alt="Soft Walk 3">
+                    </div>
+                </div>
                 <div class="product-title">Soft Walk Sneaker</div>
                 <div class="product-category">Sneakers</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 6 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh6_1.jpg" alt="Urban Flex 1">
+                        <img src="sh6_2.jpg" alt="Urban Flex 2">
+                    </div>
+                </div>
                 <div class="product-title">Urban Flex Sneaker</div>
                 <div class="product-category">Sneakers</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 7 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh7_1.jpg" alt="Velvet Step 1">
+                        <img src="sh7_2.jpg" alt="Velvet Step 2">
+                    </div>
+                </div>
                 <div class="product-title">Velvet Step Ballerina</div>
                 <div class="product-category">Ballerinas</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 8 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh8_1.jpg" alt="Midnight 1">
+                        <img src="sh8_2.jpg" alt="Midnight 2">
+                    </div>
+                </div>
                 <div class="product-title">Midnight Comfort Sandal</div>
                 <div class="product-category">Sandals</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 9 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh9_1.jpg" alt="Aero 1">
+                        <img src="sh9_2.jpg" alt="Aero 2">
+                    </div>
+                </div>
                 <div class="product-title">Aero-Light Sneaker</div>
                 <div class="product-category">Sneakers</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 10 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh10_1.jpg" alt="Elegance 1">
+                        <img src="sh10_2.jpg" alt="Elegance 2">
+                    </div>
+                </div>
                 <div class="product-title">Elegance Flat Ballerina</div>
                 <div class="product-category">Ballerinas</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 11 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh11_1.jpg" alt="Daylight 1">
+                        <img src="sh11_2.jpg" alt="Daylight 2">
+                    </div>
+                </div>
                 <div class="product-title">Daylight Strap Sandal</div>
                 <div class="product-category">Sandals</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 12 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh12_1.jpg" alt="Zenith 1">
+                        <img src="sh12_2.jpg" alt="Zenith 2">
+                    </div>
+                </div>
                 <div class="product-title">Zenith Comfort Sneaker</div>
                 <div class="product-category">Sneakers</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 13 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh13_1.jpg" alt="Pure 1">
+                        <img src="sh13_2.jpg" alt="Pure 2">
+                    </div>
+                </div>
                 <div class="product-title">Pure Soft Ballerina</div>
                 <div class="product-category">Ballerinas</div>
                 <button class="view-btn">View Details</button>
             </div>
 
             <div class="product-card">
-                <div class="product-img"><span style="color:#ccc">Product 14 Image</span></div>
+                <div class="product-img">
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="sh14_1.jpg" alt="Cloud 1">
+                        <img src="sh14_2.jpg" alt="Cloud 2">
+                    </div>
+                </div>
                 <div class="product-title">Cloud Step Luxe</div>
                 <div class="product-category">Sneakers</div>
                 <button class="view-btn">View Details</button>
             </div>
 
-        </div> </section>
+        </div>
+    </section>
 
     <div id="detailsModal" class="modal">
         <div class="modal-content">
@@ -410,31 +493,49 @@
         <p>&copy; 2026 <span>Dejavu Comfort</span> | Designed for Elegance</p>
     </footer>
 
- <script>
-    const modal = document.getElementById("detailsModal");
-    const closeModalBtn = document.querySelector(".close-modal");
-
-    document.addEventListener('click', function (e) {
-        if (e.target && e.target.classList.contains('view-btn')) {
-            if (!e.target.closest('.modal-content')) {
-                const card = e.target.closest('.product-card');
-                const title = card.querySelector(".product-title").innerText;
-                document.getElementById("modalTitle").innerText = title;
-                modal.style.display = "block";
-            }
+    <script>
+        // سكريبت التقليب بين الصور
+        function changeImage(btn, direction) {
+            const slider = btn.parentElement.querySelector('.image-slider');
+            const images = slider.querySelectorAll('img');
+            const totalImages = images.length;
+            
+            let currentIndex = slider.getAttribute('data-index') ? parseInt(slider.getAttribute('data-index')) : 0;
+            
+            currentIndex += direction;
+            
+            if (currentIndex >= totalImages) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = totalImages - 1;
+            
+            slider.setAttribute('data-index', currentIndex);
+            const offset = -currentIndex * 100;
+            slider.style.transform = `translateX(${offset}%)`;
         }
-    });
 
-    closeModalBtn.onclick = function() {
-        modal.style.display = "none";
-    }
+        // سكريبت المودال
+        const modal = document.getElementById("detailsModal");
+        const closeModalBtn = document.querySelector(".close-modal");
 
-    window.onclick = function(event) {
-        if (event.target == modal) {
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.classList.contains('view-btn')) {
+                if (!e.target.closest('.modal-content')) {
+                    const card = e.target.closest('.product-card');
+                    const title = card.querySelector(".product-title").innerText;
+                    document.getElementById("modalTitle").innerText = title;
+                    modal.style.display = "block";
+                }
+            }
+        });
+
+        closeModalBtn.onclick = function() {
             modal.style.display = "none";
         }
-    }
-</script>
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
-
