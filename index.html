@@ -370,37 +370,36 @@
         <p>&copy; 2026 <span>Dejavu Comfort</span> | Designed for Elegance</p>
     </footer>
 
-    <script>
-        // الكود اللي بيشغل الزراير والنافذة
-        const modal = document.getElementById("detailsModal");
-        const closeModal = document.querySelector(".close-modal");
-        const viewButtons = document.querySelectorAll(".view-btn");
-        const modalTitle = document.getElementById("modalTitle");
+ <script>
+    const modal = document.getElementById("detailsModal");
+    const closeModalBtn = document.querySelector(".close-modal");
 
-        // لما تدوس على أي زرار View Details
-        viewButtons.forEach(button => {
-            // بنتأكد إن الزرار مش "Add to cart" اللي جوه المودال نفسه
-            if(!button.closest('.modal-content')) {
-                button.onclick = function() {
-                    const title = this.parentElement.querySelector(".product-title").innerText;
-                    modalTitle.innerText = title;
-                    modal.style.display = "block";
-                }
+    // تفعيل زراير العرض
+    document.addEventListener('click', function (e) {
+        // لو دوست على زرار View Details
+        if (e.target && e.target.classList.contains('view-btn')) {
+            // نتأكد إنه مش الزرار اللي جوه النافذة نفسها
+            if (!e.target.closest('.modal-content')) {
+                const card = e.target.closest('.product-card');
+                const title = card.querySelector(".product-title").innerText;
+                document.getElementById("modalTitle").innerText = title;
+                modal.style.display = "block";
             }
-        });
+        }
+    });
 
-        // قفل النافذة عند الضغط على X
-        closeModal.onclick = function() {
+    // قفل النافذة من علامة الـ X
+    closeModalBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // أهم جزء: قفل النافذة لو دوست في أي مكان بره المربع الأبيض
+    window.onclick = function(event) {
+        if (event.target == modal) {
             modal.style.display = "none";
         }
-
-        // قفل النافذة لو دوست في أي مكان بره المربع الأبيض
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+    }
+</script>
 </body>
 </html>
 
