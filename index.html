@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dejavu Comfort | Premium Footwear</title>
     <style>
-        /* الألوان الأساسية */
         :root {
             --bg-white: #ffffff;
             --gold-accent: #D4AF37;
@@ -23,7 +22,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
         header {
             background-color: var(--bg-white);
             padding: 20px 50px;
@@ -52,11 +50,8 @@
             transition: var(--transition);
         }
 
-        nav a:hover {
-            color: var(--gold-accent);
-        }
+        nav a:hover { color: var(--gold-accent); }
 
-        /* تنسيق كلمة اللون فوق الصورة */
         .color-badge {
             position: absolute;
             top: 15px;
@@ -73,28 +68,12 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* About Section */
         .about-section {
             text-align: center;
             padding: 80px 20px;
             background-color: var(--light-gray);
         }
 
-        .about-section h2 {
-            color: var(--gold-accent);
-            font-size: 36px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .about-section p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 19px;
-            color: #444;
-        }
-
-        /* Products Grid */
         .collection-section {
             padding: 60px 20px;
             max-width: 1200px;
@@ -170,19 +149,8 @@
         .next { right: 5px; }
         .slider-btn:hover { background: #D4AF37; }
 
-        .product-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .product-category {
-            color: #888;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
+        .product-title { font-size: 20px; font-weight: bold; margin-bottom: 8px; }
+        .product-category { color: #888; font-size: 13px; text-transform: uppercase; margin-bottom: 20px; }
 
         .view-btn {
             background-color: transparent;
@@ -196,20 +164,13 @@
             width: 100%;
         }
 
-        .view-btn:hover {
-            background-color: var(--gold-accent);
-            color: white;
-        }
+        .view-btn:hover { background-color: var(--gold-accent); color: white; }
 
-        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
             z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
+            left: 0; top: 0; width: 100%; height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(5px);
         }
@@ -224,50 +185,10 @@
             text-align: center;
             position: relative;
             border-top: 5px solid var(--gold-accent);
-            animation: slideDown 0.4s ease;
         }
 
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .close-modal {
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            font-size: 30px;
-            cursor: pointer;
-            color: #999;
-        }
-
-        .close-modal:hover { color: var(--text-black); }
-
-        #modalTitle { color: var(--gold-accent); margin-top: 0; }
-        
-        .price-tag {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 20px 0;
-            color: var(--text-black);
-        }
-
-        footer {
-            background-color: #111;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-        }
-
+        footer { background-color: #111; color: white; text-align: center; padding: 30px; margin-top: 60px; }
         footer span { color: var(--gold-accent); }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; padding: 15px; }
-            nav { margin-top: 15px; }
-            nav a { margin: 0 10px; }
-            .modal-content { width: 85%; margin: 30% auto; }
-        }
     </style>
 </head>
 <body>
@@ -281,20 +202,11 @@
         </nav>
     </header>
 
-    <section id="about" class="about-section">
-        <h2>Dejavu Comfort</h2>
-        <p>
-            Experience the fusion of luxury and ease. Our <strong>Dejavu Comfort</strong> line is engineered for those who move. 
-            Using cloud-soft insoles and breathable materials, we ensure every step feels like walking on air. <br/>
-            <strong>Step into Dejavu, Step into Comfort</strong>
-        </p>
-    </section>
-
     <section id="collection" class="collection-section">
         <h2>Our Collection</h2>
         <div class="grid-container">
             
-            <!-- المنتج الأول (مثال جاهز بالمسارات اللي رفعتها) -->
+            <!-- المنتج 1 -->
             <div class="product-card">
                 <div class="product-img">
                     <div class="color-badge">Beige</div>
@@ -311,15 +223,15 @@
                 <button class="view-btn">View Details</button>
             </div>
 
-            <!-- المنتج الثاني (فاضي لك لوضع المسارات والالوان) -->
+            <!-- المنتج 2 -->
             <div class="product-card">
                 <div class="product-img">
-                    <div class="color-badge">اللون الأول</div>
+                    <div class="color-badge">Color 1</div>
                     <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
                     <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
                     <div class="image-slider">
-                        <img src="" alt="اللون الأول">
-                        <img src="" alt="اللون الثاني">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
                     </div>
                 </div>
                 <div class="product-title">Golden Glow Sandal</div>
@@ -327,17 +239,15 @@
                 <button class="view-btn">View Details</button>
             </div>
 
-            <!-- كرر هذا النمط لباقي الـ 14 منتج -->
-            <!-- لعدم الإطالة، سأضع لك هيكل الكارد اللي هتكرره -->
-             <!-- المنتج 3 -->
+            <!-- المنتج 3 -->
             <div class="product-card">
                 <div class="product-img">
-                    <div class="color-badge">اللون الأول</div>
+                    <div class="color-badge">Color 1</div>
                     <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
                     <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
                     <div class="image-slider">
-                        <img src="" alt="اللون الأول">
-                        <img src="" alt="اللون الثاني">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
                     </div>
                 </div>
                 <div class="product-title">Silk Touch Ballerina</div>
@@ -345,24 +255,186 @@
                 <button class="view-btn">View Details</button>
             </div>
 
-            <!-- انسخ الكارد اللي فوق ده لكل المنتجات الباقية وغير العناوين والمسارات -->
+            <!-- المنتج 4 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Color 1</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
+                    </div>
+                </div>
+                <div class="product-title">Comfort Item 4</div>
+                <div class="product-category">Sneakers</div>
+                <button class="view-btn">View Details</button>
+            </div>
+
+            <!-- المنتج 5 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Color 1</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
+                        <img src="" alt="Color 3">
+                    </div>
+                </div>
+                <div class="product-title">Soft Walk Sneaker</div>
+                <div class="product-category">Sneakers</div>
+                <button class="view-btn">View Details</button>
+            </div>
+
+            <!-- المنتج 6 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Color 1</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
+                    </div>
+                </div>
+                <div class="product-title">Urban Flex Sneaker</div>
+                <div class="product-category">Sneakers</div>
+                <button class="view-btn">View Details</button>
+            </div>
+
+            <!-- المنتج 7 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Color 1</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
+                    </div>
+                </div>
+                <div class="product-title">Velvet Step Ballerina</div>
+                <div class="product-category">Ballerinas</div>
+                <button class="view-btn">View Details</button>
+            </div>
+
+            <!-- المنتج 8 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Color 1</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
+                    </div>
+                </div>
+                <div class="product-title">Midnight Comfort Sandal</div>
+                <div class="product-category">Sandals</div>
+                <button class="view-btn">View Details</button>
+            </div>
+
+            <!-- المنتج 9 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Color 1</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
+                    </div>
+                </div>
+                <div class="product-title">Aero-Light Sneaker</div>
+                <div class="product-category">Sneakers</div>
+                <button class="view-btn">View Details</button>
+            </div>
+
+            <!-- المنتج 10 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Color 1</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
+                    </div>
+                </div>
+                <div class="product-title">Elegance Flat Ballerina</div>
+                <div class="product-category">Ballerinas</div>
+                <button class="view-btn">View Details</button>
+            </div>
+
+            <!-- المنتج 11 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Color 1</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
+                    </div>
+                </div>
+                <div class="product-title">Daylight Strap Sandal</div>
+                <div class="product-category">Sandals</div>
+                <button class="view-btn">View Details</button>
+            </div>
+
+            <!-- المنتج 12 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Color 1</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="" alt="Color 1">
+                        <img src="" alt="Color 2">
+                    </div>
+                </div>
+                <div class="product-title">Zenith Comfort Sneaker</div>
+                <div class="product-category">Sneakers</div>
+                <button class="view-btn">View Details</button>
+            </div>
+
+            <!-- المنتج 13 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Beige</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="che-djtx-013-beige-1.webp" alt="Beige">
+                        <img src="che-djtx-013-navy-2.webp" alt="Navy">
+                    </div>
+                </div>
+                <div class="product-title">Pure Soft Ballerina</div>
+                <div class="product-category">Ballerinas</div>
+                <button class="view-btn">View Details</button>
+            </div>
+
+            <!-- المنتج 14 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <div class="color-badge">Beige</div>
+                    <button class="slider-btn prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeImage(this, 1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img src="che-djtx-014-beige-2.webp" alt="Beige">
+                        <img src="che-djtx-014-camel-2.webp" alt="Camel">
+                        <img src="che-djtx-014-gold-2.webp" alt="Gold">
+                    </div>
+                </div>
+                <div class="product-title">Cloud Step Luxe</div>
+                <div class="product-category">Sneakers</div>
+                <button class="view-btn">View Details</button>
+            </div>
 
         </div>
     </section>
-
-    <div id="detailsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 id="modalTitle">Product Details</h2>
-            <p id="modalDescription">Crafted with premium materials for maximum durability and effortless style. Features an ergonomic sole designed for long-lasting comfort.</p>
-            <div class="price-tag">EGP 1,250</div>
-            <button class="view-btn" style="background-color: var(--gold-accent); color: white;">Add to Cart</button>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 <span>Dejavu Comfort</span> | Designed for Elegance</p>
-    </footer>
 
     <script>
         function changeImage(btn, direction) {
@@ -372,43 +444,16 @@
             const totalImages = images.length;
             
             let currentIndex = slider.getAttribute('data-index') ? parseInt(slider.getAttribute('data-index')) : 0;
-            
             currentIndex += direction;
             
             if (currentIndex >= totalImages) currentIndex = 0;
             if (currentIndex < 0) currentIndex = totalImages - 1;
             
             slider.setAttribute('data-index', currentIndex);
-            const offset = -currentIndex * 100;
-            slider.style.transform = `translateX(${offset}%)`;
+            slider.style.transform = `translateX(${-currentIndex * 100}%)`;
 
-            // تحديث اللون الظاهر في الـ Badge
             if (badge && images[currentIndex]) {
                 badge.innerText = images[currentIndex].getAttribute('alt');
-            }
-        }
-
-        const modal = document.getElementById("detailsModal");
-        const closeModalBtn = document.querySelector(".close-modal");
-
-        document.addEventListener('click', function (e) {
-            if (e.target && e.target.classList.contains('view-btn')) {
-                if (!e.target.closest('.modal-content')) {
-                    const card = e.target.closest('.product-card');
-                    const title = card.querySelector(".product-title").innerText;
-                    document.getElementById("modalTitle").innerText = title;
-                    modal.style.display = "block";
-                }
-            }
-        });
-
-        closeModalBtn.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
             }
         }
     </script>
